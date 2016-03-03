@@ -1,5 +1,5 @@
 /*
-    Copyright 2005-2015 Intel Corporation.  All Rights Reserved.
+    Copyright 2005-2016 Intel Corporation.  All Rights Reserved.
 
     This file is part of Threading Building Blocks. Threading Building Blocks is free software;
     you can redistribute it and/or modify it under the terms of the GNU General Public License
@@ -48,7 +48,7 @@ size_t __TBB_EXPORTED_FUNC get_initial_auto_partitioner_divisor();
 }}
 
 int ArenaConcurrency() {
-    return tbb::internal::get_initial_auto_partitioner_divisor()/4; // TODO: expose through task_arena interface?
+    return int(tbb::internal::get_initial_auto_partitioner_divisor()/4); // TODO: expose through task_arena interface?
 }
 
 // Generally, TBB does not guarantee mandatory parallelism. This test uses some whitebox knowledge about when all the threads can be available
@@ -135,14 +135,14 @@ public:
     }
 };
 
-/** The test will fail in particular if task_scheduler_init mistakenly hooks up 
+/** The test will fail in particular if task_scheduler_init mistakenly hooks up
     auto-initialization mechanism. **/
 void AssertExplicitInitIsNotSupplanted () {
     int hardwareConcurrency = tbb::task_scheduler_init::default_num_threads();
     tbb::task_scheduler_init init(1);
     Harness::ConcurrencyTracker::Reset();
     tbb::parallel_for( Range(0, hardwareConcurrency * 2, 1), ConcurrencyTrackingBody(), tbb::simple_partitioner() );
-    ASSERT( Harness::ConcurrencyTracker::PeakParallelism() == 1, 
+    ASSERT( Harness::ConcurrencyTracker::PeakParallelism() == 1,
             "Manual init provided more threads than requested. See also the comment at the beginning of main()." );
 }
 

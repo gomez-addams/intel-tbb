@@ -1,5 +1,5 @@
 /*
-    Copyright 2005-2015 Intel Corporation.  All Rights Reserved.
+    Copyright 2005-2016 Intel Corporation.  All Rights Reserved.
 
     This file is part of Threading Building Blocks. Threading Building Blocks is free software;
     you can redistribute it and/or modify it under the terms of the GNU General Public License
@@ -129,6 +129,7 @@ namespace rml {
 class MemoryPool;
 
 typedef void *(*rawAllocType)(intptr_t pool_id, size_t &bytes);
+// returns non-zero in case of error
 typedef int   (*rawFreeType)(intptr_t pool_id, void* raw_ptr, size_t raw_bytes);
 
 /*
@@ -191,6 +192,7 @@ void *pool_aligned_malloc(MemoryPool* mPool, size_t size, size_t alignment);
 void *pool_aligned_realloc(MemoryPool* mPool, void *ptr, size_t size, size_t alignment);
 bool  pool_reset(MemoryPool* memPool);
 bool  pool_free(MemoryPool *memPool, void *object);
+MemoryPool *pool_identify(void *object);
 }
 
 #include <new>      /* To use new with the placement argument */

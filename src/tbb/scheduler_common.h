@@ -1,5 +1,5 @@
 /*
-    Copyright 2005-2015 Intel Corporation.  All Rights Reserved.
+    Copyright 2005-2016 Intel Corporation.  All Rights Reserved.
 
     This file is part of Threading Building Blocks. Threading Building Blocks is free software;
     you can redistribute it and/or modify it under the terms of the GNU General Public License
@@ -275,6 +275,35 @@ inline bool CancellationInfoPresent ( task& t ) {
 inline bool ConcurrentWaitsEnabled ( task& t ) { return false; }
 
 #endif /* __TBB_TASK_GROUP_CONTEXT */
+
+inline void prolonged_pause() {
+#if defined(__TBB_time_stamp) && !__TBB_STEALING_PAUSE
+    // Assumption based on practice: 1000-2000 ticks seems to be a suitable invariant for the
+    // majority of platforms. Currently, skip platforms that define __TBB_STEALING_PAUSE
+    // because these platforms require very careful tuning.
+    machine_tsc_t prev = __TBB_time_stamp();
+    const machine_tsc_t finish = prev + 1000;
+    atomic_backoff backoff;
+    do {
+        backoff.bounded_pause();
+        machine_tsc_t curr = __TBB_time_stamp();
+        if ( curr <= prev )
+            // Possibly, the current logical thread is moved to another hadware thread or overflow is occured.
+            break;
+        prev = curr;
+    } while ( prev < finish );
+#else
+#ifdef __TBB_STEALING_PAUSE
+    static const long PauseTime = __TBB_STEALING_PAUSE;
+#elif __TBB_ipf
+    static const long PauseTime = 1500;
+#else
+    static const long PauseTime = 80;
+#endif
+    // TODO IDEA: Update PauseTime adaptively?
+    __TBB_Pause(PauseTime);
+#endif
+}
 
 //------------------------------------------------------------------------
 // arena_slot

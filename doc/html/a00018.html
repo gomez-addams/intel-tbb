@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>tbb::atomic&lt; T &gt; Struct Template Reference</title>
+<title>tbb::flow::interface8::internal::async_body&lt; Input, Ports, AsyncGateway, Body &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -33,56 +33,50 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00240.html">tbb</a></li><li class="navelem"><a class="el" href="a00018.html">atomic</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00276.html">tbb</a></li><li class="navelem"><b>flow</b></li><li class="navelem"><b>interface8</b></li><li class="navelem"><b>internal</b></li><li class="navelem"><a class="el" href="a00018.html">async_body</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00265.html">List of all members</a>  </div>
+<a href="a00436.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tbb::atomic&lt; T &gt; Struct Template Reference<div class="ingroups"><a class="el" href="a00258.html">Synchronization</a></div></div>  </div>
+<div class="title">tbb::flow::interface8::internal::async_body&lt; Input, Ports, AsyncGateway, Body &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Primary template for atomic.  
- <a href="a00018.html#details">More...</a></p>
-
-<p><code>#include &lt;atomic.h&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for tbb::atomic&lt; T &gt;:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00018.png" usemap="#tbb::atomic&lt; T &gt;_map" alt=""/>
-  <map id="tbb::atomic&lt; T &gt;_map" name="tbb::atomic&lt; T &gt;_map">
-</map>
- </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a9a6e088b09d10bea8561e8cbb3160623"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9a6e088b09d10bea8561e8cbb3160623"></a>
+typedef AsyncGateway&#160;</td><td class="memItemRight" valign="bottom"><b>async_gateway_type</b></td></tr>
+<tr class="separator:a9a6e088b09d10bea8561e8cbb3160623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8624826901f5a3267853386bf880bd88"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8624826901f5a3267853386bf880bd88"></a>
-constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>atomic</b> (T arg)</td></tr>
-<tr class="separator:a8624826901f5a3267853386bf880bd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5942feb81281f810edddc61a48dd7a39"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5942feb81281f810edddc61a48dd7a39"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (T rhs)</td></tr>
-<tr class="separator:a5942feb81281f810edddc61a48dd7a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d65b6cae3bd11c79a8e51e25055be52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d65b6cae3bd11c79a8e51e25055be52"></a>
-<a class="el" href="a00018.html">atomic</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="a00018.html">atomic</a>&lt; T &gt; &amp;rhs)</td></tr>
-<tr class="separator:a7d65b6cae3bd11c79a8e51e25055be52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9359ad213a52a8356e9bb3ddd4e67d2c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9359ad213a52a8356e9bb3ddd4e67d2c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>async_body</b> (const Body &amp;body, async_gateway_type *gateway)</td></tr>
+<tr class="separator:a9359ad213a52a8356e9bb3ddd4e67d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bae1164bc58b58e2427c0edc805f9ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1bae1164bc58b58e2427c0edc805f9ee"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>async_body</b> (const <a class="el" href="a00018.html">async_body</a> &amp;other)</td></tr>
+<tr class="separator:a1bae1164bc58b58e2427c0edc805f9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2652ac28a7c212918c8aba5271124421"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2652ac28a7c212918c8aba5271124421"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const Input &amp;v, Ports &amp;)</td></tr>
+<tr class="separator:a2652ac28a7c212918c8aba5271124421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c4b958e05662a2f561a21eb91cafe9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52c4b958e05662a2f561a21eb91cafe9"></a>
+Body&#160;</td><td class="memItemRight" valign="bottom"><b>get_body</b> ()</td></tr>
+<tr class="separator:a52c4b958e05662a2f561a21eb91cafe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b2db9ce9e33c7f7f74b6490b321d31"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5b2db9ce9e33c7f7f74b6490b321d31"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_async_gateway</b> (async_gateway_type *gateway)</td></tr>
+<tr class="separator:ab5b2db9ce9e33c7f7f74b6490b321d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename T&gt;<br/>
-struct tbb::atomic&lt; T &gt;</h3>
-
-<p>Primary template for atomic. </p>
-<p>See the Reference for details. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>atomic.h</li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="a00231.html">flow_graph.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>
 <p></p>
-Copyright &copy; 2005-2015 Intel Corporation.  All Rights Reserved.
+Copyright &copy; 2005-2016 Intel Corporation.  All Rights Reserved.
 <p></p>
 Intel, Pentium, Intel Xeon, Itanium, Intel XScale and VTune are
 registered trademarks or trademarks of Intel Corporation or its

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>tbb::invalid_multiple_scheduling Class Reference</title>
+<title>tbb::flow::interface8::indexer_node&lt; T0, T1 &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -33,46 +33,61 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00240.html">tbb</a></li><li class="navelem"><a class="el" href="a00086.html">invalid_multiple_scheduling</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00276.html">tbb</a></li><li class="navelem"><b>flow</b></li><li class="navelem"><b>interface8</b></li><li class="navelem"><a class="el" href="a00086.html">indexer_node< T0, T1 ></a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00322.html">List of all members</a>  </div>
+<a href="a00391.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tbb::invalid_multiple_scheduling Class Reference</div>  </div>
+<div class="title">tbb::flow::interface8::indexer_node&lt; T0, T1 &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Exception for repeated scheduling of the same <a class="el" href="a00154.html">task_handle</a>.  
- <a href="a00086.html#details">More...</a></p>
-
-<p><code>#include &lt;tbb_exception.h&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for tbb::invalid_multiple_scheduling:</div>
+Inheritance diagram for tbb::flow::interface8::indexer_node&lt; T0, T1 &gt;:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00086.png" usemap="#tbb::invalid_multiple_scheduling_map" alt=""/>
-  <map id="tbb::invalid_multiple_scheduling_map" name="tbb::invalid_multiple_scheduling_map">
+  <img src="a00086.png" usemap="#tbb::flow::interface8::indexer_node&lt; T0, T1 &gt;_map" alt=""/>
+  <map id="tbb::flow::interface8::indexer_node&lt; T0, T1 &gt;_map" name="tbb::flow::interface8::indexer_node&lt; T0, T1 &gt;_map">
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a737a62b087ec79d541be8f6bd26a28d0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a737a62b087ec79d541be8f6bd26a28d0"></a>
+typedef tuple&lt; T0, T1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>InputTuple</b></td></tr>
+<tr class="separator:a737a62b087ec79d541be8f6bd26a28d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e30a422d3e23f57ec1497e958859d18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e30a422d3e23f57ec1497e958859d18"></a>
+typedef internal::tagged_msg<br class="typebreak"/>
+&lt; size_t, T0, T1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>output_type</b></td></tr>
+<tr class="separator:a0e30a422d3e23f57ec1497e958859d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9935b0b26c381a39ada4764a8b0289b5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9935b0b26c381a39ada4764a8b0289b5"></a>
+typedef <br class="typebreak"/>
+internal::unfolded_indexer_node<br class="typebreak"/>
+&lt; InputTuple &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>unfolded_type</b></td></tr>
+<tr class="separator:a9935b0b26c381a39ada4764a8b0289b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abe0d56d15bd59f7b128a86ae5b6b8933"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe0d56d15bd59f7b128a86ae5b6b8933"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>what</b> () const   throw ()</td></tr>
-<tr class="separator:abe0d56d15bd59f7b128a86ae5b6b8933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a182ab0b042e166353b4b47d44a95762d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a182ab0b042e166353b4b47d44a95762d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>indexer_node</b> (<a class="el" href="a00079.html">graph</a> &amp;g)</td></tr>
+<tr class="separator:a182ab0b042e166353b4b47d44a95762d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae15bd3b02c94a6a33869cb82cf5b0a85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae15bd3b02c94a6a33869cb82cf5b0a85"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>indexer_node</b> (const <a class="el" href="a00084.html">indexer_node</a> &amp;other)</td></tr>
+<tr class="separator:ae15bd3b02c94a6a33869cb82cf5b0a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf4a446fc3831853395243087f03e21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cf4a446fc3831853395243087f03e21"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_name</b> (const char *name)</td></tr>
+<tr class="separator:a0cf4a446fc3831853395243087f03e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Exception for repeated scheduling of the same <a class="el" href="a00154.html">task_handle</a>. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>tbb_exception.h</li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="a00231.html">flow_graph.h</a></li>
 </ul>
 </div><!-- contents -->
 <hr>
 <p></p>
-Copyright &copy; 2005-2015 Intel Corporation.  All Rights Reserved.
+Copyright &copy; 2005-2016 Intel Corporation.  All Rights Reserved.
 <p></p>
 Intel, Pentium, Intel Xeon, Itanium, Intel XScale and VTune are
 registered trademarks or trademarks of Intel Corporation or its
